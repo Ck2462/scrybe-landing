@@ -1,113 +1,44 @@
-# Scrybe Landing Page
+# Intuit Scrybe AI Landing Page
 
-A modern, responsive landing page for Scrybe - an AI-powered conversation analysis platform.
+A modern, AI-powered conversation intelligence platform landing page for internal use at Intuit.
 
-## 🚀 Quick Start
+## 🚀 Live Demo
 
-### Option 1: Python Server (Recommended)
-```bash
-# Navigate to project directory
-cd scrybe-landing
+Visit the live landing page: [GitHub Pages URL will be here]
 
-# Start local server
-python3 -m http.server 8000
+## 🎯 Features
 
-# Open in browser
-open http://localhost:8000
-```
+- **AI-Powered Conversation Intelligence**: Transform internal conversations into actionable business intelligence
+- **Modern Design**: Built with Tailwind CSS for a professional, responsive experience
+- **Interactive Elements**: Tabbed features section and smooth animations
+- **Internal Focus**: Designed specifically for Intuit teams and use cases
 
-### Option 2: Node.js Server
-```bash
-# Install dependencies
-npm install
+## 🛠️ Tech Stack
 
-# Start server
-npm run serve
+- **HTML5**: Semantic structure
+- **CSS3**: Custom styling with Tailwind CSS
+- **JavaScript**: Interactive features and animations
+- **Responsive Design**: Mobile-first approach
 
-# Open in browser
-open http://localhost:3000
-```
+## 📱 Sections
 
-### Option 3: VS Code Live Server
-- Install "Live Server" extension in VS Code
-- Right-click on `index.html` and select "Open with Live Server"
+1. **Hero Section**: AI-powered conversation intelligence overview
+2. **How It Works**: 3-step process (Upload → AI Analysis → AI Insights)
+3. **Features**: AI-Generated Summaries, Smart Tagging, Enterprise Security
+4. **Use Cases**: Tailored for different Intuit teams
 
-## 📁 Project Structure
+## 🏢 Internal Platform
 
-```
-scrybe-landing/
-├── index.html              # Main HTML file
-├── css/
-│   ├── style.css          # Main stylesheet
-│   └── responsive.css     # Responsive design rules
-├── js/
-│   └── main.js            # JavaScript functionality
-├── assets/
-│   └── images/            # Image assets
-├── package.json            # Project configuration
-└── README.md              # This file
-```
+This landing page is designed for Intuit's internal Scrybe AI platform, featuring:
+- Intuit branding and messaging
+- Internal team focus
+- Enterprise security emphasis
+- Direct Slack integration for contact
 
-## 🎨 Design Features
+## 📞 Contact
 
-- **Responsive Design**: Mobile-first approach with breakpoints at 768px, 1024px, and 1440px
-- **Modern Animations**: Smooth scroll-triggered animations and hover effects
-- **Interactive Elements**: Tabbed features, hover states, and smooth transitions
-- **Accessibility**: ARIA labels, proper contrast ratios, and keyboard navigation
-- **Performance**: Lightweight animations using CSS transforms and opacity
-
-## 🛠️ Development
-
-### Prerequisites
-- Python 3.x (for local server)
-- Node.js 14+ (optional, for npm scripts)
-- Modern web browser
-
-### Local Development
-1. Clone or download the project
-2. Navigate to the project directory
-3. Start the local server using one of the methods above
-4. Open `http://localhost:8000` in your browser
-5. Make changes to files and refresh browser to see updates
-
-### File Organization
-- **HTML**: Semantic structure and content
-- **CSS**: Styling, animations, and responsive design
-- **JavaScript**: Interactive functionality and scroll effects
-- **Assets**: Images, icons, and other media files
-
-## 📱 Browser Support
-
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-
-## 🔧 Customization
-
-The landing page is built with customization in mind:
-- Color scheme defined in CSS custom properties
-- Modular CSS structure for easy modifications
-- JavaScript functions can be easily extended
-- Responsive breakpoints are clearly defined
-
-## 📄 License
-
-MIT License - feel free to use and modify as needed.
-
-## 🤝 Contributing
-
-1. Fork the project
-2. Create a feature branch
-3. Make your changes
-4. Test locally
-5. Submit a pull request
+For questions or access requests, contact via Slack: [Intuit Enterprise Slack](https://intuit.enterprise.slack.com/team/U07Q2HRUA3D)
 
 ---
 
-**Note**: This is a prototype landing page. For production use, consider adding:
-- Image optimization
-- CSS/JS minification
-- CDN integration
-- Analytics tracking
-- SEO optimization 
+Built with ❤️ for Intuit teams 
