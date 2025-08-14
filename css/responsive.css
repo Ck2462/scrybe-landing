@@ -1,0 +1,333 @@
+/* Scrybe Landing Page - Responsive Design */
+
+/* Mobile First Approach */
+
+/* Base Mobile Styles (default) */
+.container {
+  padding: 0 var(--spacing-sm);
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+.section-sm {
+  padding: var(--spacing-lg) 0;
+}
+
+.section-lg {
+  padding: var(--spacing-2xl) 0;
+}
+
+/* Responsive Grid System */
+.grid-responsive-2,
+.grid-responsive-3,
+.grid-responsive-4 {
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+/* Navigation adjustments for mobile */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: var(--white);
+  transition: left var(--transition-normal);
+  z-index: var(--z-modal);
+}
+
+.nav-menu.active {
+  left: 0;
+}
+
+.nav-toggle {
+  display: block;
+}
+
+.nav-links {
+  display: none;
+}
+
+/* Hero section mobile adjustments */
+.hero-content {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.hero-visual {
+  margin-top: var(--spacing-lg);
+}
+
+/* Card adjustments for mobile */
+.card {
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Button adjustments for mobile */
+.btn {
+  width: 100%;
+  margin-bottom: var(--spacing-sm);
+}
+
+.btn + .btn {
+  margin-left: 0;
+}
+
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .section-sm {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .section-lg {
+    padding: var(--spacing-3xl) 0;
+  }
+  
+  /* Navigation adjustments for tablet */
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+  
+  .nav-menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+  }
+  
+  /* Grid adjustments for tablet */
+  .grid-responsive-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-responsive-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-responsive-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Button adjustments for tablet */
+  .btn {
+    width: auto;
+  }
+  
+  .btn + .btn {
+    margin-left: var(--spacing-sm);
+  }
+  
+  /* Hero section tablet adjustments */
+  .hero-content {
+    text-align: left;
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .hero-visual {
+    margin-top: 0;
+  }
+}
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+  
+  /* Grid adjustments for desktop */
+  .grid-responsive-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .grid-responsive-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Hero section desktop adjustments */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+  }
+  
+  /* Features section desktop adjustments */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+  
+  /* Use cases desktop adjustments */
+  .use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+/* Large Desktop Styles (1440px and up) */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 var(--spacing-xl);
+  }
+  
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  /* Enhanced spacing for large screens */
+  .hero {
+    gap: var(--spacing-2xl);
+  }
+  
+  .features-grid,
+  .use-cases-grid {
+    gap: var(--spacing-2xl);
+  }
+}
+
+/* Extra Large Desktop Styles (1600px and up) */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
+  }
+  
+  .section-lg {
+    padding: var(--spacing-4xl) 0;
+  }
+}
+
+/* Landscape Mobile Adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: var(--spacing-md) 0;
+  }
+  
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .icon,
+  .icon-large {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .nav-menu,
+  .btn,
+  .hero-visual {
+    display: none;
+  }
+  
+  .section {
+    padding: var(--spacing-md) 0;
+    page-break-inside: avoid;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000000;
+    --text-light: #000000;
+  }
+  
+  .card {
+    border: 2px solid var(--border-color);
+  }
+  
+  .btn {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Dark Mode Support (if needed) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #0f172a;
+    --text-color: #f1f5f9;
+    --text-light: #94a3b8;
+    --white: #1e293b;
+    --border-color: #334155;
+  }
+}
+
+/* Container Responsive Adjustments */
+@media (max-width: 640px) {
+  .container-sm {
+    max-width: 100%;
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-lg {
+    max-width: 100%;
+    padding: 0 var(--spacing-md);
+  }
+}
+
+@media (max-width: 1280px) {
+  .container-xl {
+    max-width: 100%;
+    padding: 0 var(--spacing-lg);
+  }
+} 

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scrybe - Transform conversations into actionable intelligence with AI-powered transcription, summarization, and analysis.">
+    <meta name="keywords" content="AI, conversation analysis, transcription, summarization, business intelligence">
+    <meta name="author" content="Scrybe">
+    
+    <title>Scrybe - Transform Conversations into Intelligence</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#1a365d',
+                        'secondary': '#00b4d8',
+                        'accent': '#7209b7',
+                        'background': '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%) !important;
+        }
+        
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            background-size: 100px 100px;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="text-2xl font-bold text-blue-600">Intuit</div>
+                    <div class="text-gray-300">|</div>
+                    <div class="text-xl font-semibold text-gray-800">Scrybe AI</div>
+                    <span class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-2 py-1 rounded text-xs font-medium">INTERNAL</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition-colors">AI Features</a>
+                    <a href="#use-cases" class="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition-colors">Use Cases</a>
+                    <a href="https://intuit.enterprise.slack.com/team/U07Q2HRUA3D" target="_blank" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg text-sm font-medium hover:shadow-lg transition-all transform hover:scale-105 ml-4">Contact on Slack</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="nav-toggle text-gray-700 hover:text-secondary">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center bg-orange-600 hero-pattern overflow-hidden" style="background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff4500 100%) !important;">
+        <!-- Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl floating"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl floating" style="animation-delay: -3s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="text-white">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-sm font-medium mb-6">
+                        <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                        Intuit's Advanced AI Conversation Platform
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+                        AI-Powered
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-400">
+                            Conversation
+                        </span>
+                        Intelligence
+                    </h1>
+                    
+                    <p class="text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed">
+                        Scrybe automatically transcribes, analyzes, and extracts insights from internal conversations. Leverage cutting-edge AI to transform your team's communications into actionable business intelligence.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="https://intuit.enterprise.slack.com/team/U07Q2HRUA3D" target="_blank" class="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-center">
+                            Get Started
+                        </a>
+                        <a href="https://intuit.enterprise.slack.com/team/U07Q2HRUA3D" target="_blank" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all text-center">
+                            Contact on Slack
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">50k+</div>
+                            <div class="text-gray-300 text-sm">AI-Processed Hours</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">2,500+</div>
+                            <div class="text-gray-300 text-sm">Intuit Employees</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">98.5%</div>
+                            <div class="text-gray-300 text-sm">AI Accuracy</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visual -->
+                <div class="relative">
+                    <!-- Main Dashboard Mockup -->
+                    <div class="glass rounded-2xl p-6 shadow-2xl">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-white font-semibold">Intuit Scrybe AI Dashboard</h3>
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Audio Waveform -->
+                        <div class="bg-white/20 rounded-lg p-4 mb-4">
+                            <div class="flex items-end space-x-1 h-16">
+                                <div class="bg-secondary w-2 h-4 rounded animate-pulse"></div>
+                                <div class="bg-secondary w-2 h-8 rounded animate-pulse" style="animation-delay: 0.1s;"></div>
+                                <div class="bg-secondary w-2 h-12 rounded animate-pulse" style="animation-delay: 0.2s;"></div>
+                                <div class="bg-secondary w-2 h-6 rounded animate-pulse" style="animation-delay: 0.3s;"></div>
+                                <div class="bg-secondary w-2 h-10 rounded animate-pulse" style="animation-delay: 0.4s;"></div>
+                                <div class="bg-secondary w-2 h-16 rounded animate-pulse" style="animation-delay: 0.5s;"></div>
+                                <div class="bg-secondary w-2 h-8 rounded animate-pulse" style="animation-delay: 0.6s;"></div>
+                                <div class="bg-secondary w-2 h-4 rounded animate-pulse" style="animation-delay: 0.7s;"></div>
+                                <div class="bg-secondary w-2 h-12 rounded animate-pulse" style="animation-delay: 0.8s;"></div>
+                                <div class="bg-secondary w-2 h-6 rounded animate-pulse" style="animation-delay: 0.9s;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Summary -->
+                        <div class="bg-white/20 rounded-lg p-4 mb-4">
+                            <h4 class="text-white font-medium mb-2">AI Summary</h4>
+                            <div class="space-y-2 text-sm text-gray-200">
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                                    Customer issue resolved successfully
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-yellow-400 rounded-full mr-2"></div>
+                                    Follow-up required in 48 hours
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-blue-400 rounded-full mr-2"></div>
+                                    Competitor mention detected
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-secondary/30 text-white rounded-full text-xs">Support Call</span>
+                            <span class="px-3 py-1 bg-accent/30 text-white rounded-full text-xs">High Priority</span>
+                            <span class="px-3 py-1 bg-green-500/30 text-white rounded-full text-xs">Resolved</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Cards -->
+                    <div class="absolute -top-4 -right-4 glass rounded-lg p-3 floating">
+                        <div class="text-white text-sm font-medium">Processing...</div>
+                        <div class="flex space-x-1 mt-2">
+                            <div class="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
+                            <div class="w-2 h-2 bg-secondary rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+                            <div class="w-2 h-2 bg-secondary rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -bottom-6 -left-6 glass rounded-lg p-3 floating" style="animation-delay: -2s;">
+                        <div class="text-white text-sm font-medium">95% Accuracy</div>
+                        <div class="text-green-400 text-xs">✓ Transcription Complete</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-white" id="how-it-works">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    AI-Powered Intelligence in 
+                    <span class="text-secondary">Three Simple Steps</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Intuit's advanced AI platform automatically transforms your internal conversations into actionable business intelligence with enterprise-grade accuracy and security.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1: Upload -->
+                <div class="group relative bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="absolute top-4 right-4 text-6xl font-bold text-blue-100 group-hover:text-blue-200 transition-colors">01</div>
+                    
+                    <div class="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Upload</h3>
+                    <p class="text-gray-600 mb-6">Securely upload internal calls, meetings, or video files. Intuit Scrybe AI processes everything with enterprise-grade security and compliance.</p>
+                    
+                    <div class="bg-white rounded-lg p-4 border border-gray-200">
+                        <div class="text-sm font-medium text-gray-900 mb-2">Supported Formats</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">MP3</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">MP4</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">WAV</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">M4A</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">+10 more</span>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2">Up to 4GB per file</div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Analyze -->
+                <div class="group relative bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="absolute top-4 right-4 text-6xl font-bold text-purple-100 group-hover:text-purple-200 transition-colors">02</div>
+                    
+                    <div class="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform relative">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Analysis</h3>
+                    <p class="text-gray-600 mb-6">Advanced AI models transcribe, analyze sentiment, extract key insights, and automatically apply intelligent tags based on Intuit's business context.</p>
+                    
+                    <div class="bg-white rounded-lg p-4 border border-gray-200">
+                        <div class="text-sm font-medium text-gray-900 mb-3">Processing Pipeline</div>
+                        <div class="space-y-2">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                                AI Transcription (98.5% accuracy)
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                                AI Sentiment & Intent Analysis
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
+                                AI-Generated Insights
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                                Intelligent Auto-Tagging
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-3">Avg. processing: 2-5 min/hour</div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Discover -->
+                <div class="group relative bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="absolute top-4 right-4 text-6xl font-bold text-green-100 group-hover:text-green-200 transition-colors">03</div>
+                    
+                    <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Insights</h3>
+                    <p class="text-gray-600 mb-6">Access AI-powered dashboards, intelligent search, and automated insights that help Intuit teams make data-driven decisions faster.</p>
+                    
+                    <div class="bg-white rounded-lg p-4 border border-gray-200">
+                        <div class="text-sm font-medium text-gray-900 mb-3">Analytics Dashboard</div>
+                        <div class="mb-3">
+                            <div class="bg-gray-100 rounded p-2 text-xs text-gray-600 mb-2">🔍 Search conversations...</div>
+                        </div>
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="px-2 py-1 bg-secondary text-white rounded text-xs">Date Range</span>
+                            <span class="px-2 py-1 bg-secondary text-white rounded text-xs">Team</span>
+                            <span class="px-2 py-1 bg-secondary text-white rounded text-xs">Topics</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-1">
+                            <div class="bg-gray-50 p-2 rounded text-xs text-center font-medium">Trends</div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-center font-medium">Actions</div>
+                            <div class="bg-gray-50 p-2 rounded text-xs text-center font-medium">Alerts</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50" id="features">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Intuit's AI-Powered Conversation Engine
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Transform internal conversations into actionable business intelligence with Intuit's comprehensive suite of enterprise AI tools
+                </p>
+            </div>
+            
+            <!-- Feature Tabs -->
+            <div class="mb-12">
+                <div class="flex justify-center">
+                    <div class="inline-flex bg-white rounded-2xl p-2 shadow-lg border border-gray-200">
+                        <button class="feature-tab px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg" data-tab="summaries">
+                            AI-Generated Summaries
+                        </button>
+                        <button class="feature-tab px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 text-gray-800 bg-gray-100 hover:text-gray-900 hover:bg-gray-200 border border-gray-300" data-tab="labeling">
+                            AI Smart Tagging
+                        </button>
+                        <button class="feature-tab px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 text-gray-800 bg-gray-100 hover:text-gray-900 hover:bg-gray-200 border border-gray-300" data-tab="security">
+                            Enterprise Security
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature Content -->
+            <div class="relative">
+                <!-- Feature 1: AI Summaries -->
+                <div class="feature-content active" data-content="summaries">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 lg:order-1">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-6">AI-Generated Summaries</h3>
+                            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                                Get the gist of an hour-long internal meeting in seconds. Intuit's AI captures key decisions, action items, and outcomes so teams can focus on execution, not note-taking.
+                            </p>
+                            
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-4"></div>
+                                    <span class="text-gray-700">90% time savings on call review</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-4"></div>
+                                    <span class="text-gray-700">Consistent summary format</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full mr-4"></div>
+                                    <span class="text-gray-700">Extractable action items</span>
+                                </div>
+                            </div>
+                            
+                            <a href="https://intuit.enterprise.slack.com/team/U07Q2HRUA3D" target="_blank" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all transform hover:scale-105 text-center">
+                                Contact on Slack
+                            </a>
+                        </div>
+                        
+                        <div class="order-1 lg:order-2">
+                            <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+                                <div class="mb-6">
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                        <div class="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
+                                        Original Transcript (1 hour)
+                                    </h4>
+                                    <div class="bg-gray-50 rounded-lg p-4 text-sm text-gray-600 leading-relaxed">
+                                        "Hi everyone, thanks for joining today's product roadmap sync. Sarah, can you walk us through the Q2 feature priorities? We need to align on the TurboTax integration timeline... Okay, so we're looking at a March launch for the AI-powered tax recommendations. Mike, what's the current status on the machine learning model training? Great, 94% accuracy on the test dataset. Let's discuss resource allocation for the mobile optimization sprint..."
+                                        <div class="text-gray-400 mt-2">...continues for 52 more minutes</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="border-t border-gray-200 pt-6">
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                        <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                                        AI Summary (2 minutes)
+                                    </h4>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start">
+                                            <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                            <div>
+                                                <div class="font-medium text-gray-900">Key Decisions:</div>
+                                                <div class="text-gray-600">TurboTax AI integration approved for March launch</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <div class="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                            <div>
+                                                <div class="font-medium text-gray-900">Action Items:</div>
+                                                <div class="text-gray-600">Resource allocation for mobile sprint, ML model optimization</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <div class="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                            <div>
+                                                <div class="font-medium text-gray-900">Next Steps:</div>
+                                                <div class="text-gray-600">Weekly check-ins scheduled, stakeholder alignment confirmed</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 2: Smart Labeling -->
+                <div class="feature-content" data-content="labeling">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-3xl font-bold text-gray-900 mb-6">Automated & Custom Labeling</h3>
+                            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                                Automatically categorize every call using templates you create. Ensure consistency and surface trends without manual effort.
+                            </p>
+                            
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-4"></div>
+                                    <span class="text-gray-700">Custom labeling templates</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-4"></div>
+                                    <span class="text-gray-700">Automatic trend detection</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full mr-4"></div>
+                                    <span class="text-gray-700">Consistent categorization</span>
+                                </div>
+                            </div>
+                            
+                            <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all transform hover:scale-105">
+                                Explore Labeling
+                            </button>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-6">Smart Tags Applied</h4>
+                                
+                                <div class="space-y-4">
+                                    <div class="bg-gradient-to-r from-red-50 to-red-100 rounded-lg p-4 border-l-4 border-red-500">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <div class="font-medium text-red-900">Competitor Mention</div>
+                                                <div class="text-sm text-red-700">Detected at 12:34, 23:45</div>
+                                            </div>
+                                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium">High Priority</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-lg p-4 border-l-4 border-yellow-500">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <div class="font-medium text-yellow-900">Pricing Discussion</div>
+                                                <div class="text-sm text-yellow-700">Detected at 5:12, 18:22, 34:56</div>
+                                            </div>
+                                            <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-medium">Medium</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-4 border-l-4 border-blue-500">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <div class="font-medium text-blue-900">Feature Request</div>
+                                                <div class="text-sm text-blue-700">Detected at 28:15</div>
+                                            </div>
+                                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium">Low</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6 pt-6 border-t border-gray-200">
+                                    <div class="text-sm text-gray-600">
+                                        <div class="flex justify-between mb-2">
+                                            <span>Confidence Score:</span>
+                                            <span class="font-medium text-green-600">94%</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Processing Time:</span>
+                                            <span class="font-medium">2.3 seconds</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 3: Security -->
+                <div class="feature-content" data-content="security">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 lg:order-1">
+                            <h3 class="text-3xl font-bold text-gray-900 mb-6">Secure & Compliant by Design</h3>
+                            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                                With role-based access control, audit logs, and data redaction, Scrybe is built to protect your most sensitive information.
+                            </p>
+                            
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full mr-4"></div>
+                                    <span class="text-gray-700">End-to-end encryption</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-4"></div>
+                                    <span class="text-gray-700">Role-based access control</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full mr-4"></div>
+                                    <span class="text-gray-700">Comprehensive audit logs</span>
+                                </div>
+                            </div>
+                            
+                            <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all transform hover:scale-105">
+                                View Security Details
+                            </button>
+                        </div>
+                        
+                        <div class="order-1 lg:order-2">
+                            <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+                                <div class="text-center mb-8">
+                                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-gray-900">Enterprise-Grade Security</h4>
+                                </div>
+                                
+                                <div class="grid grid-cols-3 gap-4 mb-8">
+                                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4 text-center border border-blue-200">
+                                        <div class="text-2xl mb-2">🔒</div>
+                                        <div class="font-semibold text-blue-900 text-sm">SOC 2 Type II</div>
+                                    </div>
+                                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-4 text-center border border-green-200">
+                                        <div class="text-2xl mb-2">🛡️</div>
+                                        <div class="font-semibold text-green-900 text-sm">GDPR Compliant</div>
+                                    </div>
+                                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-4 text-center border border-purple-200">
+                                        <div class="text-2xl mb-2">✅</div>
+                                        <div class="font-semibold text-purple-900 text-sm">HIPAA Ready</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-gray-700">Data Encryption</span>
+                                        <span class="text-green-600 font-medium">AES-256</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-gray-700">Uptime SLA</span>
+                                        <span class="text-green-600 font-medium">99.9%</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                        <span class="text-gray-700">Data Residency</span>
+                                        <span class="text-green-600 font-medium">Configurable</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Use Cases Section -->
+    <section class="py-20 bg-white" id="use-cases">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Built for Every Intuit Team
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    AI-powered conversation intelligence tailored for the unique needs of different teams across Intuit
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Use Case 1: Product Teams -->
+                <div class="group bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-200/30 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Product & Innovation Teams</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Leverage AI to analyze customer feedback, feature requests, and user research sessions. Transform qualitative insights into data-driven product decisions.
+                        </p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                Automated feature request tracking
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                                User sentiment analysis
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                                Research session insights
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">+40% Feature Adoption</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">-60% Research Time</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Use Case 2: Compliance & Risk -->
+                <div class="group bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-green-200/30 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Compliance & Risk Teams</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Automatically monitor conversations for compliance violations, risk indicators, and policy adherence. Ensure regulatory compliance across all Intuit communications.
+                        </p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                Automated risk detection
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                                Compliance monitoring
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-teal-500 rounded-full mr-3"></div>
+                                Policy violation alerts
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-medium">90% Faster Reviews</span>
+                            <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-medium">100% Coverage</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Use Case 3: Leadership & Strategy -->
+                <div class="group bg-gradient-to-br from-purple-50 to-violet-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-200/30 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 00-2 2z"></path>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Leadership & Strategy</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Extract strategic insights from executive meetings, board calls, and leadership discussions. Turn high-level conversations into actionable business intelligence.
+                        </p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                                Strategic decision tracking
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
+                                Executive summary generation
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                                Action item extraction
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">+50% Execution Speed</span>
+                            <span class="bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-xs font-medium">100% Alignment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="text-center mt-16">
+                <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-4">Ready to Transform Your Team's Conversations?</h3>
+                    <p class="text-xl mb-6 text-blue-100">
+                        Join hundreds of Intuit teams already using AI-powered conversation intelligence
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://intuit.enterprise.slack.com/team/U07Q2HRUA3D" target="_blank" class="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg text-center">
+                            Contact on Slack
+                        </a>
+                        <a href="https://intuit.enterprise.slack.com/team/U07Q2HRUA3D" target="_blank" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all text-center">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html> 
