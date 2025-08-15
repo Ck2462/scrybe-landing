@@ -203,6 +203,11 @@ function initFeatureTabs() {
             this.classList.remove('text-gray-800', 'bg-gray-100', 'hover:text-gray-900', 'hover:bg-gray-200', 'border', 'border-gray-300');
             this.classList.add('active', 'text-white', 'bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'shadow-lg');
             
+            // Track feature tab click
+            if (typeof trackFeatureTab === 'function') {
+                trackFeatureTab(targetTab);
+            }
+            
             // Show corresponding content with animation
             const targetContent = document.querySelector(`[data-content="${targetTab}"]`);
             if (targetContent) {
